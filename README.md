@@ -7,6 +7,6 @@ This API powers an online store. The store will enable users to create, edit, se
 ## Tech Stack
 This project uses Laravel as a backend framework, MySQL as a database and Apache as a server.
 
-## Docs
+## API Docs
 
 - /api/products: returns all products from the database
