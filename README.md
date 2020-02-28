@@ -9,4 +9,4 @@ This project uses Laravel as a backend framework, MySQL as a database and Apache
 
 ## API Docs
 
-- /api/products: returns all products from the database
+- GET /api/products: returns all products from the database
