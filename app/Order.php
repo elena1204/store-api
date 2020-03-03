@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Order extends Model
 {
-    public function orders() 
+    public function products()
     {
-      return $this->belongsToMany('App\Order', 'orders_products', 'order_id', 'product_id');
+      return $this->hasMany('App\Product', 'orders_products', 'order_id', 'product_id');
     }
 
     public function user()
