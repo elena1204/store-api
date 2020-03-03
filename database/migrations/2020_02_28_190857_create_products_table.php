@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->float('price');
 
             $table->unsignedBigInteger('user_id');
+            $table->index('user_id');
             $table->foreign('user_id')
                   ->references('id')->on('users')
                   ->onDelete('cascade');
