@@ -13,7 +13,7 @@ class OrdersProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        $product = Product::where('name', 'Product 1')->first();
+        $product = Product::where('name', 'Product 2')->first();
         /** @var Order $order */
         $order = Order::find(3);
 

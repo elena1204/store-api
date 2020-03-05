@@ -42,4 +42,13 @@ class Order extends Model
     {
         $this->setAttribute('price', $price);
     }
+
+    public function jsonSerialize()
+    {
+        return [
+            'id' => $this->id,
+            'user' => $this->getUser(),
+            'products' => $this->products()->get()->all()
+        ];
+    }
 }
