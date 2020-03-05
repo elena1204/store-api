@@ -13,12 +13,10 @@ class OrdersProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        // $order = Order::find(4);
-        // $products = Product::whereIn('id', [1, 2, 3]);
-        // $product = Product::find(1);
-        
-        // // $order->products()->saveMany($products);
-        // $order->products()->save($product);
+        $product = Product::where('name', 'Product 1')->first();
+        /** @var Order $order */
+        $order = Order::find(3);
 
+        $order->products()->attach($product, ['quantity' => 10]);
     }
 }
