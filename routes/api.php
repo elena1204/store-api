@@ -23,3 +23,7 @@ Route::get('/products', 'ProductsController@index');
 Route::post('/orders/add-product', 'OrdersController@addProduct');
 
 Route::get('/orders', 'OrdersController@index');
+
+Route::post('/companies', 'CompaniesController@create');
+
+Route::get('/companies', 'CompaniesController@index');
