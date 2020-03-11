@@ -15,7 +15,7 @@ class AddCompanyIdToProductsTable extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
           $table->unsignedBigInteger('company_id');
-          $table->index('company_id');
+          // $table->index('company_id');
           $table->foreign('company_id')
                 ->references('id')->on('companies')
                 ->onDelete('cascade');

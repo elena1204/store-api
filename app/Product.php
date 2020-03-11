@@ -25,6 +25,16 @@ class Product extends Model
       ->withTimestamps();
     }
 
+    public function company()
+    {
+      return $this->belongsTo('App\Company');
+    }
+
+    public function getCompany()
+    {
+      return $this->company()->get();
+    }
+
     public function setName(string $name)
     {
         $this->setAttribute('name', $name);
