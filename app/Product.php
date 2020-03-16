@@ -35,6 +35,11 @@ class Product extends Model
       return $this->company()->get();
     }
 
+    public function setCompany(Company $company)
+    {
+        $this->company()->associate($company);
+    }
+
     public function setName(string $name)
     {
         $this->setAttribute('name', $name);
@@ -64,4 +69,5 @@ class Product extends Model
     {
         return $this->user()->get()->first();
     }
+
 }

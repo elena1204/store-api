@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Product;
 use App\User;
+use App\Company;
+
 
 class ProductsTableSeeder extends Seeder
 {
@@ -13,15 +15,15 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::where('email', 'john@doe.com')->first();
 
+        $company = Company::where('name', 'Filip DOOEL')->first();
         for($i = 1; $i < 5; $i++) {
             $product = new Product();
 
             $product->setName('Product ' . $i);
             $product->setDescription('product ' . $i . ' desc');
             $product->setPrice(100 * $i);
-            $product->setUser($user);
+            $product->setCompany($company);
 
             $product->save();
         }

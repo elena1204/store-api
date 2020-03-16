@@ -13,9 +13,11 @@ class OrdersProductsTableSeeder extends Seeder
      */
     public function run()
     {
+
+
         $product = Product::where('name', 'Product 2')->first();
         /** @var Order $order */
-        $order = Order::find(3);
+        $order = Order::find(1);
 
         $order->products()->attach($product, ['quantity' => 10]);
     }
