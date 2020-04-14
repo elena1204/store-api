@@ -2,26 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\Contracts\CompanyRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Company;
 
 class CompaniesCreateController extends Controller
 {
-  public function create(Request $request)
+  public function create(Request $request, CompanyRepositoryInterface $companyRepository)
   {
     try {
-      
+      $company = new Company($request->all());
 
-      $company = new Company;
-      $company->name = $request->get('name');
-      $company->address = $request->get('address');
-
-      $company->save();
+      $companyRepository->store($company);
 
       Log::info('Company was successfully created through CompaniesCreateController');
 
       return response()->json([
+         'error' => false,
         'message' => 'The company is successfully stored'
       ]);
     } catch (\Exception $e) {

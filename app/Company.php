@@ -8,7 +8,9 @@ class Company extends Model
 {
     protected $table = 'companies';
 
-    public function products() 
+    protected $fillable = ['name', 'address'];
+
+    public function products()
     {
       // this returns a relation
       return $this->hasMany('App\Product');

@@ -6,7 +6,7 @@ use App\Product;
 use App\Repositories\Contracts\CompanyRepositoryInterface;
 use App\Repositories\Contracts\ProductRepositoryInterface;
 use Illuminate\Http\Request;
-
+// celiot controller da se refaktorira vo povekje kontroleri so 1 public endpoint
 class ProductsController extends Controller
 {
     /**
@@ -68,6 +68,7 @@ class ProductsController extends Controller
 
     public function delete(int $id)
     {
+        // da se refaktorira so find or fail
         $product = $this->productRepository->get($id);
 
         if (!$product) {

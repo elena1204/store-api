@@ -30,8 +30,15 @@ Route::post('/orders/add-product', 'OrdersController@addProduct');
 Route::get('/orders', 'OrdersController@index');
 
 Route::prefix('companies')->group(function () {
-  Route::post('/', 'CompaniesCreateController@create')->middleware(\App\Http\Middleware\CheckCompanyCreateData::class); // /companies
   Route::get('/', 'CompaniesIndexController@index'); // /companies
+  Route::post('/create', 'CompaniesCreateController@create')->middleware(\App\Http\Middleware\CheckCompanyCreateData::class); // /companies
   Route::get('/{id}', 'CompaniesIndexController@getCompany'); // /companies/{id}
   Route::get('/{id}/products', 'CompaniesProductsController@getProducts'); // /companies/{id}/products
+});
+
+Route::prefix('users')->group(function() {
+    Route::get('/', 'UserIndexController@index');
+    Route::get('/{id}', 'UserShowController@show');
+    Route::post('/create', 'UserCreateController@create');
+    Route::delete('/{id}', 'UserDeleteController@delete');
 });

@@ -6,6 +6,8 @@ use App\Repositories\Contracts\CompanyRepositoryInterface;
 use App\Repositories\Contracts\ProductRepositoryInterface;
 use App\Repositories\EloquentCompanyRepository;
 use App\Repositories\EloquentProductRepository;
+use App\Repostiories\Contracts\UserRepositoryInterface;
+use App\Repostiories\EloquentUserRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -20,6 +22,11 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             CompanyRepositoryInterface::class,
             EloquentCompanyRepository::class
+        );
+
+        $this->app->bind(
+            UserRepositoryInterface::class,
+            EloquentUserRepository::class
         );
     }
 }

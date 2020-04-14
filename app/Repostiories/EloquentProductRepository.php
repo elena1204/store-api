@@ -9,7 +9,7 @@ class EloquentProductRepository implements ProductRepositoryInterface
 {
     public function all(): array
     {
-        return Product::all();
+        return Product::all()->all();
     }
 
     public function get(int $id): ?Product

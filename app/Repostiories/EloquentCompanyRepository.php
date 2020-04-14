@@ -9,6 +9,16 @@ class EloquentCompanyRepository implements CompanyRepositoryInterface
 {
     public function get(int $id): ?Company
     {
-        return Company::find($id);
+        return Company::findOrFail($id);
+    }
+
+    public function store(Company $company)
+    {
+        $company->save();
+    }
+
+    public function all(): array
+    {
+        return Company::all()->all();
     }
 }
