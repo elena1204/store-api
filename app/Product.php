@@ -14,7 +14,7 @@ class Product extends Model
         'price'
     ];
 
-    public function orders() 
+    public function orders()
     {
       return $this->belongsToMany(
           Order::class,
@@ -32,7 +32,7 @@ class Product extends Model
 
     public function getCompany()
     {
-      return $this->company()->get();
+      return $this->company;
     }
 
     public function setCompany(Company $company)
@@ -40,14 +40,29 @@ class Product extends Model
         $this->company()->associate($company);
     }
 
+    public function getName(): string
+    {
+        return $this->getAttribute('name');
+    }
+
     public function setName(string $name)
     {
         $this->setAttribute('name', $name);
     }
 
+    public function getDescription(): string
+    {
+        return $this->getAttribute('description');
+    }
+
     public function setDescription(string $description)
     {
         $this->setAttribute('description', $description);
+    }
+
+    public function getPrice(): float
+    {
+        return $this->getAttribute('price');
     }
 
     public function setPrice(float $price)

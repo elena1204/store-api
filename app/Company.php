@@ -21,4 +21,9 @@ class Company extends Model
       // this returns the actual database rows as Product objects
       return $this->products()->get();
     }
+
+    public function getEmail()
+    {
+        return $this->getAttribute('email');
+    }
 }

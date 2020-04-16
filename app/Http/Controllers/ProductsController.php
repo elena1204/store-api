@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProductWasCreated;
 use App\Product;
 use App\Repositories\Contracts\CompanyRepositoryInterface;
 use App\Repositories\Contracts\ProductRepositoryInterface;
@@ -53,6 +54,8 @@ class ProductsController extends Controller
         $product->setPrice($price);
 
         $this->productRepository->store($product);
+
+        event(new ProductWasCreated($product));
 
         return response()->json(['Product successfully stored.']);
     }
