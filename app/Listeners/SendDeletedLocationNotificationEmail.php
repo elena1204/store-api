@@ -4,7 +4,7 @@
 namespace App\Listeners;
 
 use App\Events\LocationWasDeleted;
-use App\Mail\ProductCreationNotificationMail;
+use App\Mail\LocationWasDeletedNotificationMail;
 use Illuminate\Support\Facades\Mail;
 
 class SendDeletedLocationNotificationEmail
@@ -13,7 +13,7 @@ class SendDeletedLocationNotificationEmail
     {
         $location = $locationWasDeleted->getLocation();
 
-        Mail::to($location->getCompany()->getEmail())->send(new ProductCreationNotificationMail($location));
+        Mail::to($location->getCompany()->getEmail())->send(new LocationWasDeletedNotificationMail($location));
 
     }
 

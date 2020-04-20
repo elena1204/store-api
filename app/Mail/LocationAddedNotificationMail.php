@@ -32,9 +32,9 @@ class LocationAddedNotificationMail extends Mailable
      */
     public function build()
     {
-        return $this->from('filip@email.com')
+        return $this->from('from@example.com')
             ->view('mails.location-added', ['location' => $this->location])
-            ->subject('New address has been created!');
+            ->subject('New address has been added!');
     }
 
 

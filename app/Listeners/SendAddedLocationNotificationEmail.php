@@ -5,7 +5,7 @@ namespace App\Listeners;
 
 
 use App\Events\LocationWasAdded;
-use App\Mail\ProductCreationNotificationMail;
+use App\Mail\LocationAddedNotificationMail;
 use Illuminate\Support\Facades\Mail;
 
 class SendAddedLocationNotificationEmail
@@ -14,7 +14,7 @@ class SendAddedLocationNotificationEmail
     {
         $location = $locationWasAdded->getLocation();
 
-        Mail::to($location->getCompany()->getEmail())->send(new ProductCreationNotificationMail($location));
+        Mail::to($location->getCompany()->getEmail())->send(new LocationAddedNotificationMail($location));
 
     }
 
