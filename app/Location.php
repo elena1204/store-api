@@ -8,7 +8,7 @@ class Location extends Model
 {
     protected $table = 'locations';
 
-    protected $fillable = [ 'address', 'address_number', 'entry'];
+    protected $fillable = [ 'address', 'address_number', 'entry', 'company_id'];
 
     public function company()
     {
