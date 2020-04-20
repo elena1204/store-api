@@ -1,4 +1,4 @@
-
+<?php
 use App\Order;
 use App\Product;
 use App\User;
