@@ -10,8 +10,8 @@ class LocationCreateController extends Controller
 {
     public function create(Request $request, LocationRepositoryInterface $locationRepository)
     {
-//        dd('tuka sme');
         try{
+
             $location = new Location($request->all());
 
             $locationRepository->store($location);

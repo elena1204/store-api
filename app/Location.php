@@ -8,7 +8,7 @@ class Location extends Model
 {
     protected $table = 'locations';
 
-    protected $fillable = [ 'address', 'address number', 'entry'];
+    protected $fillable = [ 'address', 'address_number', 'entry'];
 
     public function company()
     {
@@ -37,12 +37,12 @@ class Location extends Model
 
     public function getAddressNumber() : string
     {
-        return $this->getAttribute('address number');
+        return $this->getAttribute('address_number');
     }
 
     public function setAddressNumber(string $addressNumber)
     {
-        $this->setAttribute('address number',$addressNumber);
+        $this->setAttribute('address_number',$addressNumber);
     }
 
     public function getEntry() : string

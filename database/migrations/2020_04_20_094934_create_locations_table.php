@@ -16,7 +16,7 @@ class CreateLocationsTable extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('address')->unique();
-            $table->integer('address number');
+            $table->string('address_number');
             $table->string('entry');
 
             $table->unsignedBigInteger('company_id');

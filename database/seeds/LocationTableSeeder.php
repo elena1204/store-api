@@ -19,7 +19,7 @@ class LocationTableSeeder extends Seeder
 
         $location->setCompany($company);
         $location->setAddress('Skopje, Kaposh');
-        $location->setAddressNumber(54);
+        $location->setAddressNumber("54");
         $location->setEntry('2');
 
         $location->save();

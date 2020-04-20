@@ -43,7 +43,7 @@ Route::prefix('users')->group(function() {
     Route::delete('/{id}', 'UserDeleteController@delete');
 });
 
-Route::prefix('location')->group(function () {
+Route::prefix('locations')->group(function () {
     Route::get('/','LocationIndexController@index');
     Route::get('/{id}', 'LocationShowController@show');
     Route::delete('/{id}', 'LocationDeleteController@delete');
